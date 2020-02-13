@@ -49,13 +49,14 @@ var add=document.getElementById("street").value;
 
 var cty=document.getElementById("city").value;
 
+var pck=document.getElementById("inr").value;
 
-
+var trainer=document.getElementById("trainerName").value;
 var phone=document.getElementById("phone").value;
 
 
 
-var costomer=JSON.stringify({'firstName':name,'street':add,'city':cty,'phone':phone});
+var costomer=JSON.stringify({'firstName':name,'street':add,'city':cty,'inr':pck,'trainerName':trainer,'phone':phone});
 
 tbClients.push(costomer);
 
@@ -139,7 +140,7 @@ return true;
                 <div class="col-md-6 mb-3">
                     <label for="validationDefault4">PhoneNumber</label>
                     <input type="tel" class="form-control" id="phone" placeholder="PhoneNumber"
-                          pattern="[0-9]+" required maxlength="13" minlength="13" value="91-" >
+                          pattern="[0-9]{9}+" required maxlength="13" minlength="13" value="91-" >
                 </div>
             </div>
         </div>
@@ -194,6 +195,16 @@ return true;
                       }
               
                   }
+                  function EnableDisableTextBox1() {
+              
+              var chkYes = document.getElementById("chkYes1");
+              var trainerName = document.getElementById("trainerName");
+              trainerName.disabled = chkYes.checked ? false : true;
+              if (!trainerName.disabled) {
+                  trainerName.focus();
+              }
+      
+          }
               </script>
               <span>MaleTrainer</span>
               <label for="chkYes">
@@ -203,7 +214,7 @@ return true;
               <br>
               <span>FeMaleTrainer</span>
               <label for="chkYes">
-                  <input type="radio" id="chkYes1" name="chkPassPort" onclick="EnableDisableTextBox()" />
+                  <input type="radio" id="chkYes1" name="chkPassPort" onclick="EnableDisableTextBox1()" />
                   
               </label>
               <br>
