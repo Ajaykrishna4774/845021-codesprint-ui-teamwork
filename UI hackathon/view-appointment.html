@@ -27,7 +27,7 @@ body {
     background-color:aqua;
 }
   </style>
-<body>
+
 
 <head><title>View Appointment</title>
   
@@ -68,104 +68,34 @@ body {
     </ul>
   </div>  
 </nav>
-
-
-<div class="container">
 <div class="mydiv">
-<table class="table">
-<img src
-<thread>
+  <table class="table"  id="tblList">
+     <thead>
+       <tr>
+         
+         <th>Name</th>
+         <th>Add</th>
+         <th>City</th>
+         <th>Package</th>
+         <th>Trainer Preference</th>
+         <th>Phone</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         
+         <td id="n"></td>
+         <td id="a"></td>
+         <td id="c"></td>
+         <td id="p"></td>
+         <td id="tp"></td>
+         <td id="phn"></td>
+       </tr>
+       </tbody>
+       </table>
+       </div>
+       <script>
 
-<tr align="center">
-
- <th scope="col">S.No.</th>
-
-
-
-  <th scope="col">Name</th>
-
-
-
-  <th scope="col">Address</th>
-
-
-
-  <th scope="col">City</th>
-
-
-
-  <th scope="col">Package</th>
-
-
-
-  <th scope="col">Trainer Preference</th>
-
-
-
-  <th scope="col">Phone</th>
-
-
-
-</tr>
-
-
-
-</thread>
-
-<tbody>
-
-
-
- <tr align="center">
-
-
-
-  <th scope="row">1</th>
-
- <td>
-
- </td>
-
-</tr>
-
-
-
-<tr align="center">
-
-
-
-  <th scope="row">2</th>
-
- <td>
-
- </td>
-
-</tr>
-
-
-
-<tr align="center">
-
-
-
-  <th scope="row">3</th>
-
- <td>
-
- </td>
-
-</tr>
-
-
-
-</tbody>
-
-
-
-</table>
-</div>
-</div>
-</body>
 
 
 
@@ -189,16 +119,16 @@ body {
  
          alert(tbClients);
  
-         $("#tblList").html(""); $("#tblList").html( "<thead>"+ " <tr>"+ " <th></th>"+ " <th>fName</th>"+ " <th>street</th>"+ " <th>city</th>"+ " <th>contact</th>"+ " </tr>"+ "</thead>"+ "<tbody>"+ "</tbody>" );
+         $("#tblList").html(""); $("#tblList").html( "<thead>"+ " <tr>"+ " <th></th>"+ " <th>firstName</th>"+ " <th>street</th>"+ " <th>city</th>"+"<th>package</th>"+"<th>TrainerPreference</th>"+ " <th>contact</th>"+ " </tr>"+ "</thead>"+ "<tbody>"+ "</tbody>" );
  
  
  
          for(var i in tbClients){ var cli = JSON.parse(tbClients[i]);
  
-         $("#tblList tbody").append("<tr>"+ " <td>"+cli.fName+"</td>" + " <td>"+cli.street+"</td>" + " <td>"+cli.city+"</td>" + " <td>"+cli.phone+"</td>" + "</tr>"); }
+         $("#tblList tbody").append("<tr>"+ "<td></td>"+" <td>"+cli.firstName+"</td>" + " <td>"+cli.street+"</td>" + " <td>"+cli.city+"</td>" +"<td>"+cli.inr+"</td>"+"<td>"+cli.trainerName+"</td>"+ " <td>"+cli.phone+"</td>" + "</tr>"); }
  
  
  
      </script>
-
+    </body>
 </html>
